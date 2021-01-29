@@ -1,0 +1,75 @@
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{
+  "id": "100",
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@company.com",
+  "password": "123"
+}
+
+
+###
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{
+  "id": "200",
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@company.com",
+  "password": "123"
+}
+
+###
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{
+  "id": "300",
+  "firstName": "Mary",
+  "lastName": "Smith",
+  "email": "mary.smith@company.com",
+  "password": "123"
+}
+
+
+###
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{
+  "email": "jane.smith@company.com",
+  "password": "123"
+}
+
+###
+GET http://127.0.0.1:8080/customer/100/jane.smith@company.com%2011611160967687
+
+###
+POST http://127.0.0.1:8080/order/jane.smith@company.com%2011611160967687
+Content-Type: application/json
+
+{
+  "number": "2020-04-06-01",
+  "contents": [
+    {"item": "Ham Sandwich", "amount": 2, "price": 5.50, "tags": ["a"]},
+    {"item": "Water", "amount": 1, "price": 1.50, "tags": ["a"]},
+    {"item": "Beer", "amount": 3, "price": 2.30, "tags": ["b"]},
+    {"item": "Cheesecake", "amount": 1, "price": 3.75, "tags": ["c"]}
+  ],
+  "email": "jane.smith@company.com"
+}
+
+###
+GET http://127.0.0.1:8080/customer/100/jane.smith@company.com%2011611160967687/all
+
+###
+GET http://127.0.0.1:8080/customer/100/jane.smith@company.com%2011611160967687/items
+
+###
+GET http://127.0.0.1:8080/customer/100/jane.smith@company.com%2011611160967687/a
+
+###
+DELETE http://127.0.0.1:8080/customer/100/jane.smith@company.com%2011611160967687

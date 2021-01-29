@@ -1,0 +1,43 @@
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{
+  "id": "100",
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@company.com",
+  "password": "123"
+}
+
+###
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{
+  "email": "jane.smith@company.com",
+  "password": "123"
+}
+
+###
+POST http://127.0.0.1:8080/order/jane.smith@company.com%2011611160967687
+Content-Type: application/json
+
+{
+  "number": "2020-04-06-01",
+  "contents": [
+    {"item": "Ham Sandwich", "amount": 2, "price": 5.50, "tags": []},
+    {"item": "Water", "amount": 1, "price": 1.50, "tags": []},
+    {"item": "Beer", "amount": 3, "price": 2.30, "tags": []},
+    {"item": "Cheesecake", "amount": 1, "price": 3.75, "tags": []}
+  ],
+  "email": "jane.smith@company.com"
+}
+
+###
+GET http://127.0.0.1:8080/order/2020-04-06-01/jane.smith@company.com%2011611160967687
+
+###
+GET http://127.0.0.1:8080/order/2020-04-06-01/jane.smith@company.com%2011611160967687/total
+
+###
+DELETE http://127.0.0.1:8080/order/2020-04-06-01/jane.smith@company.com%2011611160967687

@@ -14,6 +14,9 @@ repositories {
     maven {
         url "https://kotlin.bintray.com/kotlinx"
     }
+    maven {
+        url "https://jitpack.io"
+    }
 }
 
 dependencies {
@@ -22,6 +25,10 @@ dependencies {
     implementation "ch.qos.logback:logback-classic:$logback_version"
     implementation "io.ktor:ktor-serialization:$ktor_version"
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-core:$kotlin_serialization"
+    implementation "org.jetbrains.exposed:exposed-core:0.24.1"
+    implementation "org.jetbrains.exposed:exposed-dao:0.24.1"
+    implementation "org.jetbrains.exposed:exposed-jdbc:0.24.1"
+    implementation 'com.github.mazine:oauth2-client-kotlin:1.0.2'
 
     testImplementation "io.ktor:ktor-server-tests:$ktor_version"
 }
