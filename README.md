@@ -1,7 +1,21 @@
-[![official JetBrains project](https://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
+# Общая информация
+Данный проект представляет из себя API для условного интернет-магазина, которое поддерживает хранение данных о клиентах и из заказах, а также редактировать эти данные
 
-# Creating an HTTP API with Ktor
+# Использование
+После запуска API предлагает следующие возможности для взаимодействия с базой данных:
+* /register - принимает POST запрос с данными клиента и регистрирует его в базе данных
+* /login - принимает POST запрос с данным авторизации и возвращает токен для дальнейшей аутентификации
+* /order/{token} - принимает POST запрос с данными нового заказа
+* /order/{id}/{token} - принимает GET запрос и возвращает данные заказа
+* /order/{id}/{token}/total - принимает GET запрос и возвращает суммарную стоимость заказа
+* /order/{id}/{token} - принимает DELETE запрос и удаляет заказ из базы
+* /customer/{id}/{token} - принимает GET запрос и возвращает данные о клиенте
+* /customer/{id}/{token}/all - принимает GET запрос и возвращает все заказы клиента
+* /customer/{id}/{token}/items - принимает GET запрос и возвращает все заказанные клиентом товары
+* /customer/{id}/{token}/{tag} - принимает GET запрос и возвращает все заказанные клиентом товары с заданным тегом
+* /customer/{id}/{token} - принимает DELETE запрос и удаляет данные клиента из базы
 
-This repository is the code corresponding to the hands-on lab [Creating HTTP APIs with Ktor](https://play.kotlinlang.org/hands-on/Creating%20http%20apis%20with%20ktor/01_Introduction). 
+# Запуск
+Желающим ознакомиться с данным прекрасным проектом предлагается самостоятельно скомпилировать исходный код в Intellij Idea, так как при компиляции в .jar происходит потеря application.conf, что делает запуск ktor невозможным
